@@ -1,12 +1,13 @@
 # zaw-z
 ## Description
 [zaw](https://github.com/zsh-users/zaw) source for
-[z](https://github.com/knu/z)(the fork version of the
-[original](https://github.com/rupa/z) that I use and tested).
+[z](https://github.com/knu/z) (the fork of
+[rupa/z](https://github.com/rupa/z)). I use and have tested using the forked
+version, but it should work with the original version, too.
 
 ## Install
 [zplug](https://github.com/b4b4r07/zplug) is recommended. Refer to zplug's
-project page for more information on how to install and set it up.
+project page for more information on how to install and set up zplug.
 
 ```zsh
 source ~/.zplug/zplug
