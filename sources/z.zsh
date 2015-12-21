@@ -1,7 +1,9 @@
 zaw-src-z() {
     type z >/dev/null 2>&1 || return 1
 
-    candidates=( $( z | awk '{ print $2 }' | sed -e "s#$HOME#~#" ) )
+    IFS=$'\n' candidates=( ${(D)$( z | awk '{
+        for (i = 2; i <= NF; i++) printf "%s", $i (i == NF ? ORS : OFS)
+    }' )} )
     actions=(zaw-callback-cd \
         zaw-callback-append-to-buffer \
         zaw-callback-replace-buffer)
