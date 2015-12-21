@@ -29,3 +29,9 @@ I use it like:
 # C-M-z for zaw-z
 bindkey "\e^Z" zaw-z
 ```
+
+## License
+MIT License
+
+## Author
+Naoki Mizuno
