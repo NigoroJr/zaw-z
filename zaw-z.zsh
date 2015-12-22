@@ -5,14 +5,16 @@ ZAW_Z_CD_CMD=' cd'
 
 # Just like zaw-callback-execute but with cd
 zaw-callback-cd() {
-    local dest=${~1}
-    BUFFER="$ZAW_Z_CD_CMD $1"
+    # Substitute first \~ to ~
+    local dest=${${(q)1}/#\\~/\~}
+    BUFFER="$ZAW_Z_CD_CMD $dest"
     zle accept-line
 }
 
 zaw-callback-remove-entry() {
     local dest=${~1}
-    _z_cmd --delete $dest
+    local z_cmd=${_Z_CMD:-z}
+    ( cd $dest && eval "$z_cmd -x" >/dev/null )
 }
 
 if ! type z >/dev/null 2>&1 && ! [[ $_Z_CMD ]]; then
