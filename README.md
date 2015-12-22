@@ -30,6 +30,9 @@ I use it like:
 bindkey "\e^Z" zaw-z
 ```
 
+Change the `ZAW_Z_CD_CMD` to use a different `cd` command. By default, it uses
+` z` with a leading space so that it doesn't pollute the history.
+
 ## License
 MIT License
 

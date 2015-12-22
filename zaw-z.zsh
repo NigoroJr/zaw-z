@@ -1,8 +1,11 @@
 #!/usr/bin/env zsh
 
+# Space in front to not add to history
+ZAW_Z_CD_CMD=' z'
+
 # Just like zaw-callback-execute but with cd
 zaw-callback-cd() {
-    BUFFER="cd $1"
+    BUFFER="$ZAW_Z_CD_CMD $1"
     zle accept-line
 }
 
