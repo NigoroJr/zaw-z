@@ -15,10 +15,10 @@ zaw-callback-remove-entry() {
     _z_cmd --delete $dest
 }
 
-if typeset -f zaw-register-src >/dev/null; then
-    source $0:A:h/sources/*.zsh
-elif type _z_cmd >/dev/null 2>&1; then
+if ! type z >/dev/null 2>&1 && ! [[ $_Z_CMD ]]; then
     echo "zaw-z was not loaded because z couldn't be found" >&2
-else
+elif ! typeset -f zaw-register-src >/dev/null; then
     echo "zaw-z was not loaded because zaw wasn't sourced" >&2
+else
+    source $0:A:h/sources/*.zsh
 fi
