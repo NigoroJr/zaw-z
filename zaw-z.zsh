@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Space in front to not add to history
-ZAW_Z_CD_CMD=' z'
+ZAW_Z_CD_CMD=' cd'
 
 # Just like zaw-callback-execute but with cd
 zaw-callback-cd() {
