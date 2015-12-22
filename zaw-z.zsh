@@ -2,8 +2,14 @@
 
 # Just like zaw-callback-execute but with cd
 zaw-callback-cd() {
-    BUFFER="cd $1"
+    local dest=${~1}
+    BUFFER="cd '$dest'"
     zle accept-line
+}
+
+zaw-callback-remove-entry() {
+    local dest=${~1}
+    _z_cmd --delete $dest
 }
 
 if typeset -f zaw-register-src >/dev/null; then
