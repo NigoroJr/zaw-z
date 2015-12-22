@@ -1,7 +1,7 @@
 zaw-src-z() {
-    type z >/dev/null 2>&1 || return 1
+    type _z_cmd >/dev/null 2>&1 || return 1
 
-    IFS=$'\n' candidates=( $( z | awk '{
+    IFS=$'\n' candidates=( $( _z_cmd | awk '{
         for (i = 2; i <= NF; i++) printf "%s", $i (i == NF ? ORS : OFS)
     }' | sed -e "s#$HOME#~#" ) )
     actions=( \
