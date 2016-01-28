@@ -38,7 +38,8 @@ bindkey "\e^Z" zaw-z
 ```
 
 Change the `ZAW_Z_CD_CMD` to use a different `cd` command. By default, it uses
-` cd` with a leading space so that it doesn't pollute the history.
+`cd`. If you don't want the executed command to be saved in your history, you
+can change this variable to ` cd` with a leading space.
 
 ## License
 MIT License
