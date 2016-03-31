@@ -1,5 +1,7 @@
 # zaw-z
+
 ## Description
+
 [zaw](https://github.com/zsh-users/zaw) source for
 [z](https://github.com/rupa/z).
 
@@ -8,29 +10,30 @@ Tested using:
 * [knu/z](https://github.com/knu/z) (fork)
 
 ## Install
-[zplug](https://github.com/b4b4r07/zplug) is recommended. Refer to zplug's
-project page for more information on how to install and set up zplug.
+
+Using [zplug](https://github.com/b4b4r07/zplug) is recommended. Refer to
+zplug's project page for more information on how to install and set up zplug.
 
 ```zsh
 source ~/.zplug/zplug
 
 # zplug 'rupa/z', \
 zplug 'knu/z', \
-    of:'z.sh', \
+    use:'z.sh', \
     nice:10
 
-zplug 'zsh-users/zaw' \
-    | zplug 'NigoroJr/zaw-z', nice:11
+zplug 'NigoroJr/zaw-z', \
+    nice:11, \
+    on:'zsh-users/zaw'
 
-if ! zplug check; then
-    zplug install
-fi
+zplug check || zplug install
 
 zplug load
 ```
 
 ## Usage
-I use it like:
+
+Put the following in your `.zshrc`.
 
 ```zsh
 # C-M-z for zaw-z
@@ -42,7 +45,9 @@ Change the `ZAW_Z_CD_CMD` to use a different `cd` command. By default, it uses
 can change this variable to ` cd` with a leading space.
 
 ## License
+
 MIT License
 
 ## Author
+
 Naoki Mizuno
