@@ -13,7 +13,7 @@ zaw-callback-cd() {
 zaw-callback-remove-entry() {
     local dest=${~1}
     local z_cmd=${_Z_CMD:-z}
-    ( cd $dest && eval "$z_cmd -x" >/dev/null )
+    ( builtin cd -q $dest && eval "$z_cmd -x" >/dev/null )
 }
 
 if ! type z >/dev/null 2>&1 && ! [[ $_Z_CMD ]]; then
