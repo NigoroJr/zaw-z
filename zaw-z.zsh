@@ -21,5 +21,5 @@ if ! type z >/dev/null 2>&1 && ! [[ $_Z_CMD ]]; then
 elif ! typeset -f zaw-register-src >/dev/null; then
     echo "zaw-z was not loaded because zaw wasn't sourced" >&2
 else
-    source $0:A:h/sources/*.zsh
+    source "${${(%):-%N}:A:h}"/sources/*.zsh
 fi
