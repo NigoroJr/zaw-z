@@ -12,11 +12,11 @@ zaw-callback-cd() {
 
 zaw-callback-remove-entry() {
     local dest=${~1}
-    local z_cmd=${_Z_CMD:-z}
+    local z_cmd="${_Z_CMD:-z}"
     ( builtin cd -q $dest && eval "$z_cmd -x" >/dev/null )
 }
 
-if ! type z >/dev/null 2>&1 && ! [[ $_Z_CMD ]]; then
+if ! type z >/dev/null 2>&1 && ! [[ -n $_Z_CMD ]]; then
     echo "zaw-z was not loaded because z couldn't be found" >&2
 elif ! typeset -f zaw-register-src >/dev/null; then
     echo "zaw-z was not loaded because zaw wasn't sourced" >&2
