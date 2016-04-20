@@ -3,7 +3,11 @@
 ## Description
 
 [zaw](https://github.com/zsh-users/zaw) source for
-[z](https://github.com/rupa/z).
+[z](https://github.com/rupa/z). This zaw source lets you jump to
+"frecent" directories very quickly. The more recent and/or frequent you visit
+a directory the higher it will rank in the list.
+
+![Screenshot](./misc/zaw-z.gif)
 
 Tested using:
 * [rupa/z](https://github.com/rupa/z) (original)
