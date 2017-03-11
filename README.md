@@ -26,10 +26,10 @@ zplug 'zsh-users/zaw'
 # zplug 'rupa/z', \
 zplug 'knu/z', \
     use:'z.sh', \
-    nice:10
+    defer:2
 
 zplug 'NigoroJr/zaw-z', \
-    nice:11, \
+    defer:3, \
     on:'zsh-users/zaw'
 
 zplug check || zplug install
